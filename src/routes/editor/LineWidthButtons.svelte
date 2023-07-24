@@ -3,7 +3,7 @@
 
   export let lineWidth;
 
-  const widths = [1, 2, 4, 8, 16, 32 ];
+  const widths = [2, 4, 8, 16, 32 ];
 </script>
 
 

@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import LineWidthButtons from './LineWidthButtons.svelte';
+  import ColorButtons from './ColorButtons.svelte';
 
   export let image;
 
@@ -9,6 +10,9 @@
   let pos;
 
   let lineWidth = 2;
+  let strokeStyle = 'black';
+
+  $: console.log(strokeStyle);
 
 
   function getPos(e) {
@@ -29,7 +33,7 @@
     ctx.beginPath();
     ctx.lineWidth = lineWidth;
     ctx.lineCap = 'round';
-    ctx.strokeStyle = 'black';
+    ctx.strokeStyle = strokeStyle;
     ctx.moveTo(pos.x, pos.y);
     setPos(e);
     ctx.lineTo(pos.x, pos.y);
@@ -55,6 +59,8 @@
 <div class=wrapper>
   <canvas bind:this={canvas} width="246" height="180" />
   <LineWidthButtons bind:lineWidth />
+  <ColorButtons bind:strokeStyle={strokeStyle} />
+  <input type="color" bind:value={strokeStyle}>
 </div>
 
 <style>
