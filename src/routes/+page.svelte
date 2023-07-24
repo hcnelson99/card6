@@ -1,6 +1,3 @@
-<script>
-    import CardEditor from '$lib/CardEditor.svelte';
-</script>
+<h1>Home page</h1>
 
-<CardEditor />
-
+<a href="/editor">Editor</a>
