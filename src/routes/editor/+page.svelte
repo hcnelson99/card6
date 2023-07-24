@@ -12,6 +12,7 @@
 
 <div class="wrapper">
   <form>
+    <h2> Card Text </h2>
     <label>
       Title:
       <input bind:value={title} />
@@ -33,7 +34,10 @@
       <input bind:value={power} />
     </label>
   </form>
+  <div>
+    <h2> Card Art </h2>
   <Canvas bind:image />
+  </div>
   <Card {title} {cardType} {rules} {mana} {power} {image} />
 </div>
 
